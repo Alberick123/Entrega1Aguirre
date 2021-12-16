@@ -1,0 +1,50 @@
+{% extends "AppClub/base.html" %}
+{% load static %}
+{% block contenidoVariable %}
+    <!-- Mashead header-->
+    <header class="masthead">
+        <div class="container px-5">
+            <h1>Vista de la opción estadio.</h1>
+            <div class="row gx-5 align-items-center">
+                <img src="{% static 'AppClub/assets/img/estadio.jpg' %}" alt="MDN" >
+            </div>
+        </div>
+    </header>
+    <!-- Quote/testimonial aside-->
+    <aside class="text-left">
+        <div class="container px-3">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-sm-11">
+                    {{ form.as_table }}
+
+                    <form action="estadio" method="POST"> {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="col-sm-10">
+                                <input id="nombre" name="direccion" />
+                            </div>
+                            <label for="direccion" class="col-sm-2 col-form-label">Direccion</label>
+                            <div class="col-sm-10">
+                                <input id="direccion" name="direccion" />
+                            </div>
+                            <label for="anioFund" class="col-sm-2 col-form-label">Año fundacion</label>
+                            <div class="col-sm-10">
+                                <input type="date" id="anioFund" name="anioFund" />
+                            </div>
+
+                            <div class="col-sm-2 col-form-label"></div>
+                            <div class="col-sm-10">
+                                <button type="button" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+{% endblock %}
+
+
+
+
